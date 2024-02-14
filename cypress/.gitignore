@@ -1,0 +1,4 @@
+package-lock.json
+cypress/fixtures/*.json
+cypress/data/*.js
+cypress.config.js

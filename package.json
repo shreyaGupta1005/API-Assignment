@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "cypress": "^13.6.4"
+  },
+  "dependencies": {
+    "@cypress/schema-tools": "^4.7.10",
+    "ajv": "^8.12.0",
+    "chai-json-schema": "^1.5.1"
+  }
+}

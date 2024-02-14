@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "required": [
+        "data",
+        "support"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "data": {
+            "type": "object",
+            "required": [
+                "id",
+                "email",
+                "first_name",
+                "last_name",
+                "avatar"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "avatar": {
+                    "type": "string"
+                }
+            }
+        },
+        "support": {
+            "type": "object",
+            "required": [
+                "url",
+                "text"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+  "name": "@cypress/schema-tools",
+  "version": "4.7.10",
+  "description": "Validate, sanitize and document JSON schemas",
+  "main": "dist",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prettier": "prettier --write 'src/**/*.ts'",
+    "lint": "tslint --project .",
+    "build": "tsc",
+    "prebuild": "npm run deps && npm run prettier",
+    "postbuild": "npm run check-transpiled-correctly",
+    "check-transpiled-correctly": "node .",
+    "deps": "deps-ok",
+    "size": "npm pack --dry",
+    "semantic-release": "semantic-release",
+    "pretest": "npm run build",
+    "test": "npm run unit",
+    "unit": "ava-ts --verbose test/*-test.ts",
+    "repl": "ts-node"
+  },
+  "keywords": [
+    "schema",
+    "json-schema",
+    "utility"
+  ],
+  "author": "Gleb Bahmutov <gleb@cypress.io>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@bahmutov/all-paths": "1.0.2",
+    "@types/ramda": "0.25.47",
+    "debug": "4.3.4",
+    "is-my-json-valid": "github:ax-vasquez/is-my-json-valid#b875c39b07f757593d9b9123e023b8fd2c350a0c",
+    "json-stable-stringify": "1.0.1",
+    "json2md": "1.6.3",
+    "lodash": "4.17.21",
+    "quote": "0.4.0",
+    "ramda": "0.25.0"
+  },
+  "devDependencies": {
+    "@types/lodash.camelcase": "4.3.7",
+    "@types/node": "9.6.61",
+    "ava": "2.4.0",
+    "ava-ts": "0.25.2",
+    "common-tags": "1.8.2",
+    "deps-ok": "1.4.1",
+    "husky": "7.0.4",
+    "jsen": "0.6.6",
+    "prettier": "2.7.1",
+    "semantic-release": "19.0.3",
+    "terminal-banner": "1.1.0",
+    "ts-node": "7.0.1",
+    "tslint": "5.20.1",
+    "typescript": "4.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cypress-io/schema-tools.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "release": {
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {
+          "type": "break",
+          "release": "major"
+        }
+      ]
+    }
+  }
+}
